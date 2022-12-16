@@ -7,27 +7,32 @@ package actividad_02_ud3_ed;
 
 /**
  * 
- * @author Ana
+ * @author dgonorm2803
+ * 
+ * @version 16/12/2022
  */
 public class CCuenta {
 
-
-     
-  protected String nombre;
+    /**
+     *
+     */
+    protected String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
 
-  
+    /**
+     *
+     */
     public CCuenta ()
     {
     }
    /**
     * 
     * @param nom Nombre del titular de la cuenta
-    * @param cue
-    * @param sal
-    * @param tipo 
+    * @param cue Identificación de la cuenta
+    * @param sal Saldo que tiene la cuenta
+    * @param tipo Tipo de interés que tiene la cuenta
     */
     public CCuenta (String nom, String cue, double sal, double tipo)
     {
@@ -38,25 +43,36 @@ public class CCuenta {
     }
   /**
    * 
-   * @param nom 
+   * @param nom Asigna un nombre
    */
     public void asignarNombre(String nom)
     {
         nombre=nom;
     }
    
+    /**
+     *
+     * @return Te devuelve el nombre asignado
+     */
     public String obtenerNombre()
     {
         return nombre;
     }
 
-    
-     public double estado ()
+    /**
+     *
+     * @return Te devuelve el estado actual
+     */
+    public double estado ()
     {
         return saldo;
     }
 
-    
+    /**
+     *
+     * @param cantidad Cantidad a ingresar
+     * @throws Exception Caso donde no es posible ingresar
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0){
@@ -64,7 +80,11 @@ public class CCuenta {
         setSaldo(saldo + cantidad);
     }
 
-   
+    /**
+     *
+     * @param cantidad Cantidad a retirar
+     * @throws Exception Casos donde no es posible retirar
+     */
     public void retirar (double cantidad) throws Exception
     {
         if (cantidad < 0){
@@ -74,28 +94,44 @@ public class CCuenta {
         setSaldo(saldo - cantidad);
     }
     
+    /**
+     *
+     * @return Devuelve la identificación de la cuenta
+     */
     public String obtenerCuenta ()
     {
         return cuenta;
     }
 
-  
-  public void setCuenta(String cuenta) {
+    /**
+     *
+     * @param cuenta Da un valor a la identificación de cuenta
+     */
+    public void setCuenta(String cuenta) {
     this.cuenta = cuenta;
   }
 
-  
-  public void setSaldo(double saldo) {
+    /**
+     *
+     * @param saldo Da un valor al saldo
+     */
+    public void setSaldo(double saldo) {
     this.saldo = saldo;
   }
 
- 
-  public double getTipoInterés() {
+    /**
+     *
+     * @return Devuelve un tipo de interés
+     */
+    public double getTipoInterés() {
     return tipoInterés;
   }
 
-  
-  public void setTipoInterés(double tipoInterés) {
+    /**
+     *
+     * @param tipoInterés Da un valor a tipo de interés
+     */
+    public void setTipoInterés(double tipoInterés) {
     this.tipoInterés = tipoInterés;
   }
 }
